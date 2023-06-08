@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta nmae="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>online shopping</title>
+  <link rel="stylesheet" href="../new.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="../new.html"><img src="../images/logo.png" width="225px"></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+       <li><a href="../new.html">Home</a></li>
+       <li><a href="product.html">product</a></li>
+       <li><a href="#">About</a></li>
+       <li><a href="#">Contact</a></li>
+       <li><a href="account.html">Account</a></li>
+       <li>
+        <a href="cartpage.html" id="btn">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+      <span id="count"></span>
+    
+        </ul>
+      </nav>
+      
+      <img src="../images/menu.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+ </div>
+ <!-- cart items details -->
+       <div class="small-container cart-page">
+        <table>
+          <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+          </tr>
+           <tr>
+               <td>
+                <div class="cart-info">
+                  <img src="../images/buy-1.jpg" >
+              
+                   <div>
+                    <p> Red Printed T-shirt</p>
+                    <small>price: rs 1000.00</small>
+                    <br>
+                    <a href="">Remove</a>
+                   </div>
+                 </div>  
+               </td>
+               <td><input type="number" value="1"></td>
+               <td>Rs1000</td>
+           </tr>
+           <tr>
+            <td>
+             <div class="cart-info">
+               <img src="../images/buy-2.jpg" >
+           
+                <div>
+                 <p> Black sport shoes</p>
+                 <small>price: rs 1500.00</small>
+                 <br>
+                 <a href="">Remove</a>
+                </div>
+              </div>  
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>Rs1000</td>
+        </tr>
+        <tr>
+          <td>
+           <div class="cart-info">
+             <img src="../images/buy-3.jpg" >
+         
+              <div>
+               <p>Black paint</p>
+               <small>price: rs 1100.00</small>
+               <br>
+               <a href="">Remove</a>
+              </div>
+            </div>  
+          </td>
+          <td><input type="number" value="1"></td>
+          <td>Rs1000</td>
+      </tr>
+        </table>
+        <div class="total-price">
+          <table>
+            <tr>
+              <td>Subtotal</td>
+              <td>3000</td>
+            </tr>
+            <tr>
+              <td>Tax</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>total</td>
+              <td>3100</td>
+            </tr>
+          </table>
+        </div>
+        <a href="../dashboard/dashboard.html"></a>
+       </div>
+
+
+ 
+  
+        <script src="../jsfolder/togglemenu.js"></script>
+        <script src="../jsfolder/imageclick_change.js"></script>
+</body>
+</html>
