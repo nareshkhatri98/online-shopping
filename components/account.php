@@ -83,11 +83,15 @@ if(isset($_POST['submit'])){
      $row = mysqli_fetch_array($result);
   
      if($row['user_role'] == 'admin'){
-        $_SESSION['fullname'] = $row['fullname'];
+      $_SESSION['admin'] = $row['fullname'];
+      $_SESSION['id'] = $row['id']; 
+     
      header('location:../dashboard/dashboard.php');
     }
     elseif($row['user_role'] == 'User'){
-        $_SESSION['fullname'] = $row['name'];
+      $_SESSION['User'] = $row['fullname'];
+      $_SESSION['id'] = $row['id']; 
+     
         header('location:userdashboard.php');
     }
     

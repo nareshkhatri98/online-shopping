@@ -1,5 +1,12 @@
 <?php 
-@include '../components/connect.php';?>
+@include '../components/connect.php';
+session_start();
+if (!isset($_SESSION['admin'])) {
+  header('location:../../components/account.php');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,15 +28,21 @@
     <div class="menu-icon" onclick="openSidebar()">
       <span class="material-icons-outlined">menu</span>
     </div>
-    <?php
-    $sel = " SELECT * FROM users WHERE user_role = 'admin'";
-      $query = mysqli_query($conn, $sel);
-      $result= mysqli_fetch_assoc($query);
-      ?>
 
     <div class="class-right">
+  
+    <?php
+    $sql = "SELECT COUNT(*) AS total_users FROM users  WHERE user_role='User'";
+    $Total = mysqli_query($conn, $sql);
+    if ($Total) {
+      $row = mysqli_fetch_assoc($Total);
+      $totalUsers = $row["total_users"];
+    } else {
+      $totalUsers = 0;
+    }
+    ?>
 
-    <h1>Welcome- <smaLL> <?php echo $result['fullname']; ?></smaLL></h1>
+    <h1>Welcome- <smaLL>  <?php echo $_SESSION['admin'] ?></smaLL></h1>
       
       
     </div>
@@ -52,36 +65,33 @@
         <span class="material-icons-outlined">dashboard</span> Dashboard</li>
 
       <li class="sidebar-list-item">
-       <a href="abcd.php"><span class="material-icons-outlined">inventory_2 </span> Add Product</li></a>
+       <a href="abcd.php"><span class="material-icons-outlined">inventory_2 </span> Product</li></a>
        
       
      <li class="sidebar-list-item"><a href="userlist.php"><span class="material-icons-outlined">groups</span> List user</li></a>
 
-     <li class="sidebar-list-item"><span class="material-icons-outlined">
-      category
-      </span> Insert Category</li>
-      <li class="sidebar-list-item">
-      <span class="material-icons-outlined">
-        visibility
-        </span> View category
-        </li>
+     
+     
       <li class="sidebar-list-item"><span class="material-icons-outlined">
         shopping_cart
         </span> orders</li>
-        <li class="sidebar-list-item">
-          <a href="show.html"></a><span class="material-icons-outlined">
-            add_box
-            </span> Insert Brand</li>
+       
+         
     <li class="sidebar-list-item"> <span class="material-icons-outlined">settings </span> Setting</li>
    </ul>
   </aside>
   <!-- Endsidebar -->
+  <div class="total-user">
+  <span class="text-primary font-weight-bold">
+           total user: <?php echo $totalUsers; ?>
+          </span>
+  
+  </div>
 
   <!-- end main -->
  
 
 
-  
  
 </div>
 

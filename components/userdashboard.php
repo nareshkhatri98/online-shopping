@@ -61,7 +61,7 @@
         shopping_cart
         </span>  my orders</li>
        
-    <li class="sidebar-list-item"> <span class="material-icons-outlined">person </span> Logout</li>
+    <li class="sidebar-list-item"><a href="logout.php"> <span class="material-icons-outlined">person </span> Logout</li></a>
    </ul>
   </aside>
   <!-- Endsidebar -->

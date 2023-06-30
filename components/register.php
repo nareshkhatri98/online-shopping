@@ -85,18 +85,23 @@
 
     if($password != $cpassword){
         $error[] = 'password not matched!';
-        echo "$error";
+        
     }else{
       $insert = "INSERT INTO users(fullname, address, email, password, user_role) VALUES('$name','$address','$email','$password','$user_role')";
       mysqli_query($conn, $insert);
+      if($insert){
+       echo 'user register successfully';
       header('location:account.php');
-      
+    }
   }
 
   }
   ?>
         
+       
 
+
+   
  
   
        <script src="../jsfolder/togglemenu.js"></script>

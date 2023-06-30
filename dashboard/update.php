@@ -1,34 +1,7 @@
 <?php
-@include '../components/connect.php';
-
-$id = $_GET['edit'];
-
-if(isset($_POST['update_product'])){
-
-   $product_name = $_POST['product_name'];
-   $product_price = $_POST['product_price'];
-   $product_image = $_FILES['product_img']['name'];
-   $product_image_tmp_name = $_FILES['product_img']['tmp_name'];
-   $product_image_folder = 'upload_image/'.$product_image;
-
-   if(empty($product_name) || empty($product_price) || empty($product_image)){
-      $message[] = 'please fill out all!';    
-   }else{
-
-      $update_data = "UPDATE products SET product_name='$product_name', product_price='$product_price', product_img='$product_image'  WHERE product_id = '$id'";
-      $upload = mysqli_query($conn, $update_data);
-
-      if($upload){
-         move_uploaded_file($product_image_tmp_name, $product_image_folder);
-         header('location:abcd.php');
-      }else{
-         $$message[] = 'please fill out all!'; 
-      }
-
-   }
-};
-
+include 'model.php';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,45 +12,21 @@ if(isset($_POST['update_product'])){
    <link rel="stylesheet" href="prod.css">
 </head>
 <body>
-
-<?php
-   if(isset($message)){
-      foreach($message as $message){
-         echo '<span class="message">'.$message.'</span>';
-      }
-   }
-?>
-
 <div class="container">
-
-
-<div class="admin-product-form-container centered">
-
-   <?php
-      
-      $select = mysqli_query($conn, "SELECT * FROM products WHERE product_id = '$id'");
-      while($row = mysqli_fetch_assoc($select)){
-
-   ?>
-   
-   <form action="" method="post" enctype="multipart/form-data">
-      <h3 class="title">update the product</h3>
-      <input type="text" class="box" name="product_name" value="<?php echo $row['product_name']; ?>" placeholder="enter the product name">
-      <input type="number" min="0" class="box" name="product_price" value="<?php echo $row['product_price']; ?>" placeholder="enter the product price">
-      <input type="file" class="box" name="product_img"  accept="image/png, image/jpeg, image/jpg">
-      <input type="submit" value="update product" name="update_product" class="btn">
-      <a href="abcd.php" class="btn">go back!</a>
-   </form>
-   
-
-
-   <?php }; ?>
-
-   
-
+   <div class="admin-product-form-container centered">
+      <?php
+      $editid = $_GET['edit'];
+      $productdetails = $obj->displayRecodrById($editid);
+      ?>
+      <form action="" method="post" enctype="multipart/form-data">
+         <h3 class="title">Update the product</h3>
+         <input type="text" class="box" name="product_name" value="<?php echo $productdetails['product_name']; ?>" placeholder="Enter the product name">
+         <input type="number" min="0" class="box" name="product_price" value="<?php echo $productdetails['product_price']; ?>" placeholder="Enter the product price">
+         <input type="file" class="box" name="product_img" accept="image/png, image/jpeg, image/jpg">
+         <input type="submit" value="Update product" name="update_product" class="btn">
+         <a href="abcd.php" class="btn">Go back!</a>
+      </form>
+   </div>
 </div>
-
-</div>
-
 </body>
 </html>

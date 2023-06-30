@@ -13,46 +13,46 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
 </head>
 <body>
-  <div class="header">
-  <div class="container">
-    <div class="navbar">
-      <div class="logo">
-        <a href="new.html"><img src="images/logo.png" width="225px"></a>
-      </div>
-      <nav>
-        <ul id="MenuItems">
-       <li><a href="new.html">Home</a></li>
-       <li><a href="components/product.php  ">product</a></li>
-       <li><a href="#">About</a></li>
-       <li><a href="#">Contact</a></li>
-       <li><a href="components/account.php">Account</a></li>
-       <li>
-        <a href="components/cartpage.html" id="btn">
-          <i class="fas fa-shopping-cart"></i>
-          <span id="count"></span>
-        </a>
-      </li>
-        </ul>
-      </nav>
+    <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="new.html"><img src="images/logo.png" width="225px"></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+        <li><a href="new.php">Home</a></li>
+        <li><a href="components/product.php  ">product</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="components/account.php">Account</a></li>
+        <li>
+          <a href="components/cartpage.html" id="btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="count"></span>
+          </a>
+        </li>
+          </ul>
+        </nav>
+        
       
-    
-      <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <h1>Give Your Workout <br>A new style! </h1>
-        <p> To enable E-Commerce in Nepal to take off, massive<br> investment 
-          is needed in infrastructure. It will take massive investments 
-          to increase mobile data coverage and geographic coverage,<br> and make it
-           affordable for the entire population.</p>
-        <a href="" class="btn">Exploer &#8594;</a>
+        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
       </div>
-      <div class="col-2">
-        <img src="images/image1.png" alt="">
+      <div class="row">
+        <div class="col-2">
+          <h1>Give Your Workout <br>A new style! </h1>
+          <p> To enable E-Commerce in Nepal to take off, massive<br> investment 
+            is needed in infrastructure. It will take massive investments 
+            to increase mobile data coverage and geographic coverage,<br> and make it
+            affordable for the entire population.</p>
+          <a href="" class="btn">Exploer &#8594;</a>
+        </div>
+        <div class="col-2">
+          <img src="images/image1.png" alt="">
+        </div>
       </div>
     </div>
   </div>
- </div>
 
  <!-- -----featured categories---- -->
   <div class="categories">
@@ -85,7 +85,7 @@
      <a class="addCart"><i class="fas fa-shopping-cart cart"></i></a>
     </div>
 
-    <div class="col-4">
+    <div class="col-4"> 
       <img src="images/product-2.jpg" alt="">
       <h4>Red Printed T-shirt</h4>
       <div class="rating">
@@ -205,7 +205,7 @@
                        larger (than Mi Band 3)
                       AMOLED color Full-touch display with adjustable brightness.<br>
               </small>
-              <a href="" class="btn">Buy Now &#8594;</a>
+              <a href="components/account.php" class="btn">Buy Now &#8594;</a>
             </div>
           </div>
         </div>

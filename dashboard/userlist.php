@@ -22,7 +22,7 @@ $time = time();
 
 <body>
 <div class="grid-container">
-
+  
   <!-- header -->
   <header class="header">
     <div class="menu-icon" onclick="openSidebar()">
@@ -55,11 +55,7 @@ $time = time();
 
       <li class="sidebar-list-item">
        <a href="dashboard.php"><span class="material-icons-outlined">inventory_2 </span> Product</li></a>
-      
-     <li class="sidebar-list-item"><span class="material-icons-outlined">groups</span> Customers</li>
-     <li class="sidebar-list-item"><span class="material-icons-outlined">
-      category
-      </span> Category</li>
+    
       <li class="sidebar-list-item"><span class="material-icons-outlined">
         shopping_cart
         </span> orders</li>
@@ -74,8 +70,7 @@ $time = time();
 
    <div class="admin-product-form-container">
 
-
-
+  
 <?php
 
       $select = mysqli_query($conn, "SELECT * FROM users where user_role = 'User'");
@@ -84,6 +79,7 @@ $time = time();
    ?>
    <div class="product-display">
       <table class="product-display-table">
+      <h1>User Details</h1>
          <thead>
          <tr> 
             <th>S.N</th>
