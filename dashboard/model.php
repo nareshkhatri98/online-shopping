@@ -25,6 +25,7 @@ class Model {
       $row = $result->fetch_assoc();
       return $row;
     }
+    
   }
   #update query
   function updateproduct($id) {
